@@ -1,0 +1,88 @@
+[02-Feb-2019 16:50:09 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in C:\Winginx\home\localhost\public_html\CRUD_PHP\dados.php on line 21
+[02-Feb-2019 16:50:09 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in C:\Winginx\home\localhost\public_html\CRUD_PHP\dados.php on line 25
+[02-Feb-2019 16:50:09 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in C:\Winginx\home\localhost\public_html\CRUD_PHP\dados.php on line 27
+[02-Feb-2019 16:51:28 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in C:\Winginx\home\localhost\public_html\CRUD_PHP\dados.php on line 21
+[02-Feb-2019 16:51:28 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in C:\Winginx\home\localhost\public_html\CRUD_PHP\dados.php on line 25
+[02-Feb-2019 16:51:28 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in C:\Winginx\home\localhost\public_html\CRUD_PHP\dados.php on line 27
+[02-Feb-2019 16:51:40 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in C:\Winginx\home\localhost\public_html\CRUD_PHP\dados.php on line 21
+[02-Feb-2019 16:51:40 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in C:\Winginx\home\localhost\public_html\CRUD_PHP\dados.php on line 25
+[02-Feb-2019 16:51:40 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in C:\Winginx\home\localhost\public_html\CRUD_PHP\dados.php on line 27
+[02-Feb-2019 17:19:05 UTC] PHP Warning:  mysqli_fetch_assoc() expects exactly 1 parameter, 2 given in C:\Winginx\home\localhost\public_html\CRUD_PHP\dados.php on line 16
+[02-Feb-2019 17:19:05 UTC] PHP Warning:  Illegal string offset 'qtd' in C:\Winginx\home\localhost\public_html\CRUD_PHP\dados.php on line 18
+[02-Feb-2019 17:20:32 UTC] PHP Warning:  Illegal string offset 'qtd' in C:\Winginx\home\localhost\public_html\CRUD_PHP\dados.php on line 18
+[02-Feb-2019 17:21:47 UTC] PHP Warning:  Illegal string offset 'qtd' in C:\Winginx\home\localhost\public_html\CRUD_PHP\dados.php on line 17
+[02-Feb-2019 17:26:06 UTC] PHP Warning:  Illegal string offset 'qtd_usuario' in C:\Winginx\home\localhost\public_html\CRUD_PHP\dados.php on line 16
+[02-Feb-2019 17:27:06 UTC] PHP Warning:  Illegal string offset 'qtd_usuario' in C:\Winginx\home\localhost\public_html\CRUD_PHP\dados.php on line 16
+[04-Feb-2019 21:44:47 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in C:\Winginx\home\localhost\public_html\CRUD_PHP\listar.php on line 6
+[04-Feb-2019 21:44:47 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in C:\Winginx\home\localhost\public_html\CRUD_PHP\listar.php on line 15
+[04-Feb-2019 21:45:28 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in C:\Winginx\home\localhost\public_html\CRUD_PHP\listar.php on line 6
+[04-Feb-2019 21:45:28 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in C:\Winginx\home\localhost\public_html\CRUD_PHP\listar.php on line 15
+[04-Feb-2019 21:45:33 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in C:\Winginx\home\localhost\public_html\CRUD_PHP\listar.php on line 6
+[04-Feb-2019 21:45:33 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in C:\Winginx\home\localhost\public_html\CRUD_PHP\listar.php on line 15
+[04-Feb-2019 21:46:49 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in C:\Winginx\home\localhost\public_html\CRUD_PHP\listar.php on line 6
+[04-Feb-2019 21:46:49 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in C:\Winginx\home\localhost\public_html\CRUD_PHP\listar.php on line 15
+[04-Feb-2019 21:49:31 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in C:\Winginx\home\localhost\public_html\CRUD_PHP\listar.php on line 6
+[04-Feb-2019 21:49:31 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in C:\Winginx\home\localhost\public_html\CRUD_PHP\listar.php on line 15
+[05-Feb-2019 01:27:18 UTC] PHP Warning:  mysqli_connect() expects parameter 1 to be string, object given in C:\Winginx\home\localhost\public_html\CRUD_PHP\listar.php on line 14
+[05-Feb-2019 01:29:28 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Winginx\home\localhost\public_html\CRUD_PHP\listar.php on line 19
+[05-Feb-2019 01:36:48 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in C:\Winginx\home\localhost\public_html\CRUD_PHP\listar.php on line 17
+[05-Feb-2019 03:03:28 UTC] PHP Fatal error:  Uncaught Error: Call to a member function begin_transaction() on null in C:\Winginx\home\localhost\public_html\CRUD_PHP\dados.php:15
+Stack trace:
+#0 {main}
+  thrown in C:\Winginx\home\localhost\public_html\CRUD_PHP\dados.php on line 15
+[05-Feb-2019 03:04:21 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in C:\Winginx\home\localhost\public_html\CRUD_PHP\dados.php:19
+Stack trace:
+#0 {main}
+  thrown in C:\Winginx\home\localhost\public_html\CRUD_PHP\dados.php on line 19
+[05-Feb-2019 03:08:27 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in C:\Winginx\home\localhost\public_html\CRUD_PHP\dados.php:20
+Stack trace:
+#0 {main}
+  thrown in C:\Winginx\home\localhost\public_html\CRUD_PHP\dados.php on line 20
+[05-Feb-2019 03:08:43 UTC] PHP Fatal error:  Uncaught Error: Call to a member function rollback() on null in C:\Winginx\home\localhost\public_html\CRUD_PHP\dados.php:39
+Stack trace:
+#0 {main}
+  thrown in C:\Winginx\home\localhost\public_html\CRUD_PHP\dados.php on line 39
+[05-Feb-2019 03:43:34 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_fetch_assoc() in C:\Winginx\home\localhost\public_html\CRUD_PHP\formulario.php:76
+Stack trace:
+#0 {main}
+  thrown in C:\Winginx\home\localhost\public_html\CRUD_PHP\formulario.php on line 76
+[05-Feb-2019 03:45:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_fetch_assoc() in C:\Winginx\home\localhost\public_html\CRUD_PHP\formulario.php:76
+Stack trace:
+#0 {main}
+  thrown in C:\Winginx\home\localhost\public_html\CRUD_PHP\formulario.php on line 76
+[05-Feb-2019 03:45:12 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_fetch_assoc() in C:\Winginx\home\localhost\public_html\CRUD_PHP\formulario.php:76
+Stack trace:
+#0 {main}
+  thrown in C:\Winginx\home\localhost\public_html\CRUD_PHP\formulario.php on line 76
+[05-Feb-2019 03:46:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_fetch_assoc() in C:\Winginx\home\localhost\public_html\CRUD_PHP\formulario.php:76
+Stack trace:
+#0 {main}
+  thrown in C:\Winginx\home\localhost\public_html\CRUD_PHP\formulario.php on line 76
+[05-Feb-2019 03:46:39 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_fetch_assoc() in C:\Winginx\home\localhost\public_html\CRUD_PHP\formulario.php:76
+Stack trace:
+#0 {main}
+  thrown in C:\Winginx\home\localhost\public_html\CRUD_PHP\formulario.php on line 76
+[05-Feb-2019 03:50:12 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_fetch_assoc() in C:\Winginx\home\localhost\public_html\CRUD_PHP\formulario.php:76
+Stack trace:
+#0 {main}
+  thrown in C:\Winginx\home\localhost\public_html\CRUD_PHP\formulario.php on line 76
+[05-Feb-2019 03:50:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_fetch_assoc() in C:\Winginx\home\localhost\public_html\CRUD_PHP\formulario.php:76
+Stack trace:
+#0 {main}
+  thrown in C:\Winginx\home\localhost\public_html\CRUD_PHP\formulario.php on line 76
+[05-Feb-2019 03:54:20 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_fetch_assoc() in C:\Winginx\home\localhost\public_html\CRUD_PHP\formulario.php:76
+Stack trace:
+#0 {main}
+  thrown in C:\Winginx\home\localhost\public_html\CRUD_PHP\formulario.php on line 76
+[05-Feb-2019 04:14:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_fetch_assoc() in C:\Winginx\home\localhost\public_html\CRUD_PHP\formulario.php:76
+Stack trace:
+#0 {main}
+  thrown in C:\Winginx\home\localhost\public_html\CRUD_PHP\formulario.php on line 76
+[05-Feb-2019 15:04:11 UTC] PHP Fatal error:  Uncaught Error: Call to a member function mysqli_error() on boolean in C:\Winginx\home\localhost\public_html\CRUD_PHP\editar_dados.php:19
+Stack trace:
+#0 {main}
+  thrown in C:\Winginx\home\localhost\public_html\CRUD_PHP\editar_dados.php on line 19
+[05-Feb-2019 15:04:26 UTC] PHP Fatal error:  Uncaught Error: Call to a member function mysql_error() on boolean in C:\Winginx\home\localhost\public_html\CRUD_PHP\editar_dados.php:19
+Stack trace:
+#0 {main}
+  thrown in C:\Winginx\home\localhost\public_html\CRUD_PHP\editar_dados.php on line 19
