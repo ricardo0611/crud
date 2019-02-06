@@ -1,6 +1,10 @@
 <?php
-include_once('conexao.php');
+    include_once('conexao.php');
     session_start();
+    if (isset($_SESSION['msg'])) :
+        echo $_['msg'];
+    endif;
+    session_unset();
 ?>
 
 <!DOCTYPE html>
@@ -27,6 +31,7 @@ include_once('conexao.php');
                     unset($_SESSION['msg']);
                 }
             ?>
+
             <div class="form-group">
                 <input class="form-control" type="hidden" name="id">
             </div>
@@ -44,10 +49,6 @@ include_once('conexao.php');
             </div>
 
             <div class="form-group">
-                <input class="form-control" type="text" name="cidade" placeholder="Cidade">
-            </div>
-
-            <div class="form-group">
                 <label for="exampleFormControlSelect1" name="sigla">Estado</label>
                 <select class="form-control" id="exampleFormControlSelect1">
                   <option value="1">GO</option>
@@ -57,7 +58,20 @@ include_once('conexao.php');
                   <option value="5">RS</option>
                 </select>
             </div>
-            <input type="submit" class="btn btn-primary" value="Confirmar Cadastro">
+
+            <div class="form-group">
+                <label for="exampleFormControlSelect1" name="cidade">Cidade</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option value="1">Goiania</option>
+                  <option value="2">Imperatriz</option>
+                  <option value="3">Rio de Janeiro</option>
+                  <option value="4">Sao Paulo</option>
+                  <option value="5">Porto Alegre</option>
+                </select>
+            </div>
+            
+            <input type="submit" class="btn btn-primary" name="cadastrar" value="CONFIRMAR CADASTRO">
+            <a href="listar.php">LISTA DE CLIENTES</a>
     </form>
 </div>
 </body>

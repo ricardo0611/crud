@@ -1,14 +1,16 @@
-<?php include_once("conexao.php");
+<?php 
 
-/*-------CONTANDO USUÁRIOS --------- */
-$quant_usuarios = "SELECT COUNT(id) as qtd_usuario FROM usuarios";
-$retorno_usuarios = mysqli_query($conn, $quant_usuarios);
-$resultado = mysqli_fetch_assoc($retorno_usuarios);
+	include_once("conexao.php");
 
-/*--------LISTANDO USUÁRIOS---------*/
+	/*-------CONTANDO USUÁRIOS --------- */
+	$quant_usuarios = "SELECT COUNT(id) as qtd_usuario FROM usuarios";
+	$retorno_usuarios = mysqli_query($conn, $quant_usuarios);
+	$resultado = mysqli_fetch_assoc($retorno_usuarios);
 
-$result_usuarios = "SELECT * FROM usuarios";
-$tabela = mysqli_query($conn, $result_usuarios);
+	/*--------LISTANDO USUÁRIOS---------*/
+
+	$result_usuarios = "SELECT * FROM usuarios";
+	$tabela = mysqli_query($conn, $result_usuarios);
 
 
 ?>
@@ -32,13 +34,13 @@ $tabela = mysqli_query($conn, $result_usuarios);
 <?php echo "<h3> Listagem de Usuários" . "</h3>"."<hr>"; ?>
 
  <table class="table">
- 	<button type="submit" class="btn btn-outline-primary right"><a href="formulario.php">Cadastrar</a></button>
-    <thead>
+    <thead class="thead-dark">
         <tr>
           <th scope="col">#</th>
           <th scope="col">Nome</th>
           <th scope="col">Email</th>
-          <th scope="col" colspan="2">Ações</th>
+          <th scope="col">Telefone</th>
+          <th scope="col">Ações</th>
         </tr>
     </thead>
 	<tbody>
@@ -49,12 +51,18 @@ $tabela = mysqli_query($conn, $result_usuarios);
 		echo '<td>'. $row_users['id'] .'</td>';
 	    echo '<td>'. $row_users['nome_completo'] .'</td>';
 	    echo '<td>'. $row_users['email'] .'</td>';
-	    echo '<td>'. "<a href='editar.php?id=".$row_users['id']." '> Editar </a>".'</td>';
-	    echo '<td>'. "<a href='excluir.php?id=".$row_users['id']." '> Excluir </a>".'</td>';
+	    echo '<td>'. $row_users['telefone'] .'</td>';
+	   	echo 
+		   	 '<td>
+			   	<a href="excluir.php?id=' .$row_users['id'] . '" class="btn btn-outline-danger">Excluir</a>
+			   	<a href="editar.php?id=' .$row_users['id'] . '" class="btn btn-outline-success">Editar</a>
+		   	 </td>';
+	    
 	    echo '</tr>';  
 	}
 	?>
 	</tbody>
 </table>
+<button type="submit" class="btn btn-outline-primary right"><a style="font-size: 14px; outline-offset: none;" href="formulario.php">NOVO USUÁRIO</a></button>
 </div>
 </body>

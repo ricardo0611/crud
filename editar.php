@@ -1,6 +1,8 @@
 <?php
-    $conn = new mysqli("127.0.0.1", "root", "", "testebulla");
-    $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+    session_start();
+    include_once('conexao.php');
+
+    $id = mysqli_escape_string($conn, $_POST['id']);
     $resultado = "SELECT * FROM usuarios WHERE id = '$id' LIMIT 1";
     $resultado_user = mysqli_query($conn, $resultado);
     $row_user = mysqli_fetch_assoc($resultado_user);
@@ -20,7 +22,7 @@
 </head>
 <body>
 
-<form method="POST" action="http://localhost/CRUD_PHP/editar_dados.php">
+<form method="POST" action="editar_dados.php">
         
         <div class="container">
         <h2>Editar Usuários</h2>
@@ -32,6 +34,9 @@
                     unset($_SESSION['msg']);
                 }
             ?>
+             <div class="form-group">
+                <input class="form-control" type="hidden" name="id" value="<?php echo $row_user['id'];?>">
+            </div>
 
             <div class="form-group">
                 <input class="form-control" type="text" name="nome_completo" value="<?php echo $row_user['nome_completo'];?>" placeholder="Nome">
@@ -52,10 +57,7 @@
                   <option value="5">RS</option>
                 </select>
             </div>
-            <div class="form-group">
-                <input class="form-control" type="hidden" name="id" value="<?php echo $row_user['id'];?>">
-            </div>
-            <input type="submit" class="btn btn-primary" name="btn-editar" value="Editar">
+            <input type="submit" class="btn btn-primary" name="btn-editar" value="ATUALIZAR">
         </div>
     </form>
     

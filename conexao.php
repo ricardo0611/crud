@@ -1,14 +1,16 @@
 <?php
 
-$conn = new mysqli("127.0.0.1", "root", "", "testebulla");
+$servername = "127.0.0.1";
+$user = "root";
+$password = "";
+$db_name = "testebulla";
 
-if ($conn->connect_errno) {
+$conn = mysqli_connect($servername, $user, $password, $db_name);
+mysqli_set_charset($conn, "utf-8");
+
+if ($conn->connect_error) :
     printf("Connect failed: %s\n", $mysqli->connect_error);
-    exit();
-}
-
-$conn->begin_transaction(MYSQLI_TRANS_START_READ_ONLY);
-
+endif;
 
 return $conn;
 
