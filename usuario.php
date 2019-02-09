@@ -1,10 +1,6 @@
 <?php
-    include_once('conexao.php');
-    session_start();
-    if (isset($_SESSION['msg'])) :
-        echo $_['msg'];
-    endif;
-    session_unset();
+
+ 
 ?>
 
 <!DOCTYPE html>
@@ -20,17 +16,10 @@
     <script src="main.js"></script>
 </head>
 <body>
-    <form method="POST" action="dados.php">
+    <div class="container">
+      <form name="cadastra" method="POST" action="cadastra.php">
         
-        <div class="container">
-        <h2>Cadastro de Usuários</h2>
-            <?php
-                if(isset($_SESSION['msg']))
-                {
-                    echo "<p>" .$_SESSION['msg'] ."</p>";
-                    unset($_SESSION['msg']);
-                }
-            ?>
+            <h2>Cadastro de Usuários</h2>
 
             <div class="form-group">
                 <input class="form-control" type="hidden" name="id">
@@ -49,7 +38,7 @@
             </div>
 
             <div class="form-group">
-                <label for="exampleFormControlSelect1" name="sigla">Estado</label>
+                <label for="exampleFormControlSelect1" name="id_estado">Estado</label>
                 <select class="form-control" id="exampleFormControlSelect1">
                   <option value="1">GO</option>
                   <option value="2">MA</option>
@@ -70,9 +59,9 @@
                 </select>
             </div>
             
-            <input type="submit" class="btn btn-primary" name="cadastrar" value="CONFIRMAR CADASTRO">
+            <input type="submit" class="btn btn-primary" name="cadastrar" value="cadastrar">
             <a href="listar.php">LISTA DE CLIENTES</a>
-    </form>
-</div>
+      </form>
+    </div>
 </body>
 </html>

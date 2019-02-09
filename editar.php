@@ -1,51 +1,58 @@
 <?php
-    session_start();
-    include_once('conexao.php');
 
-    $id = mysqli_escape_string($conn, $_POST['id']);
-    $resultado = "SELECT * FROM usuarios WHERE id = '$id' LIMIT 1";
-    $resultado_user = mysqli_query($conn, $resultado);
-    $row_user = mysqli_fetch_assoc($resultado_user);
+include 'conexao.php';
+
+$id = $_POST['id'];
+
+if(empty($id))
+{
+	header("Location: ../listar.php");
+}
+
+else
+{
+	$sql = "SELECT * FROM usuarios WHERE id = $id";
+
+	try{
+		$consulta = $conexao->prepare($sql);
+		$consulta->execute();
+
+	}catch(Exception $e){
+		echo "Ocorreu um erro ao editar" .$e->getMessage();
+	}
+
+	while ($resultado = $consulta->fetch(PDO::FETCH_OBJ)) {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Editar dados</title>
+    <title>CRUD PHP - EDITAR DADOS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    
     <script src="main.js"></script>
 </head>
-<body>
 
-<form method="POST" action="editar_dados.php">
+<form method="POST" action="editarDados.php">
         
         <div class="container">
         <h2>Editar Usuários</h2>
-        
-            <?php
-                if(isset($_SESSION['msg']))
-                {
-                    echo "<p>" .$_SESSION['msg'] ."</p>";
-                    unset($_SESSION['msg']);
-                }
-            ?>
-             <div class="form-group">
-                <input class="form-control" type="hidden" name="id" value="<?php echo $row_user['id'];?>">
+            <div class="form-group">
+                <input class="form-control" type="hidden" name="id" value="<?php echo $resultado->id;?>">
             </div>
 
             <div class="form-group">
-                <input class="form-control" type="text" name="nome_completo" value="<?php echo $row_user['nome_completo'];?>" placeholder="Nome">
+                <input class="form-control" type="text" name="nome_completo" value="<?php echo $resultado->nome_completo;?>" placeholder="Nome">
             </div>
             <div class="form-group">
-                <input class="form-control" type="email" name="email" value="<?php echo $row_user['email'];?>" placeholder="Email">
+                <input class="form-control" type="email" name="email" value="<?php echo $resultado->email;?>" placeholder="Email">
             </div>
             <div class="form-group">
-                <input class="form-control" type="tel" name="telefone" value="<?php echo $row_user['telefone'];?>" placeholder="Telefone">
+                <input class="form-control" type="tel" name="telefone" value="<?php echo $resultado->numero;?>" placeholder="Telefone">
             </div>
             <div class="form-group">
                 <label for="exampleFormControlSelect1" name="sigla">Estado</label>
@@ -57,9 +64,19 @@
                   <option value="5">RS</option>
                 </select>
             </div>
-            <input type="submit" class="btn btn-primary" name="btn-editar" value="ATUALIZAR">
+            <input type="submit" class="btn btn-primary" name="editar" value="ATUALIZAR">
         </div>
-    </form>
-    
-</body>
-</html>
+</form>
+<?php
+	}
+}
+
+?>
+
+
+
+
+
+
+
+

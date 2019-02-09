@@ -1,16 +1,17 @@
 <?php
 
-$servername = "127.0.0.1";
-$user = "root";
-$password = "";
-$db_name = "testebulla";
+$servidor = "localhost";
+$usuario = "root";
+$senha = "";
+$nomeDoBanco = "testebulla";
 
-$conn = mysqli_connect($servername, $user, $password, $db_name);
-mysqli_set_charset($conn, "utf-8");
+	try {
+		$conexao = new PDO("mysql:dbname=$nomeDoBanco; host=$servidor", $usuario, $senha);
+		$conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$conexao -> exec("SET CHARACTER SET utf8");
+	} catch(PDOException $e) {
+		echo 'ERROR: ' . $e->getMessage();
+	}
 
-if ($conn->connect_error) :
-    printf("Connect failed: %s\n", $mysqli->connect_error);
-endif;
-
-return $conn;
-
+	
+?>	

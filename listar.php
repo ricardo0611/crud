@@ -2,17 +2,6 @@
 
 	include_once("conexao.php");
 
-	/*-------CONTANDO USUÁRIOS --------- */
-	$quant_usuarios = "SELECT COUNT(id) as qtd_usuario FROM usuarios";
-	$retorno_usuarios = mysqli_query($conn, $quant_usuarios);
-	$resultado = mysqli_fetch_assoc($retorno_usuarios);
-
-	/*--------LISTANDO USUÁRIOS---------*/
-
-	$result_usuarios = "SELECT * FROM usuarios";
-	$tabela = mysqli_query($conn, $result_usuarios);
-
-
 ?>
 
 <!DOCTYPE html>
@@ -29,40 +18,70 @@
 </head>
 
 <body>
-<div class="container">
+	<div class="container">
 
-<?php echo "<h3> Listagem de Usuários" . "</h3>"."<hr>"; ?>
+		<?php echo "<h3> Listagem de Usuários" . "</h3>"."<hr>"; ?>
 
- <table class="table">
-    <thead class="thead-dark">
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Nome</th>
-          <th scope="col">Email</th>
-          <th scope="col">Telefone</th>
-          <th scope="col">Ações</th>
-        </tr>
-    </thead>
-	<tbody>
+		 <table class="table">
+		 	<button style="margin-bottom: 12px;" type="submit" class="btn btn-outline-primary right">
+				<a style="font-size: 14px; outline-offset: none;" href="formulario.php">NOVO USUÁRIO</a>
+			</button>
+		    <thead class="thead-dark">
+		        <tr>
+		          <th scope="col">#</th>
+		          <th scope="col">Nome</th>
+		          <th scope="col">Email</th>
+		          <th scope="col">Telefone</th>
+		          <th scope="col"></th>
+		          <th scope="col">Estado</th>
+		          <th scope="col">Ações</th>
+		        </tr>
+		    </thead>
+		    <?php
+			    $sql = "
+						SELECT U.id, U.nome_completo, U.email, T.numero, E.sigla, E.nome_estado
+						FROM telefone as T
+						INNER JOIN usuarios as U
+						ON T.id_usuario = U.id
+						INNER JOIN estados as E
+						ON E.id = U.id_estado
+						";
+				try{
+					
+					$listar = $conexao->prepare($sql);
+					$listar->execute();
 
-	<?php
-	while ($row_users = mysqli_fetch_assoc($tabela)) {
-		echo '<tr>';
-		echo '<td>'. $row_users['id'] .'</td>';
-	    echo '<td>'. $row_users['nome_completo'] .'</td>';
-	    echo '<td>'. $row_users['email'] .'</td>';
-	    echo '<td>'. $row_users['telefone'] .'</td>';
-	   	echo 
-		   	 '<td>
-			   	<a href="excluir.php?id=' .$row_users['id'] . '" class="btn btn-outline-danger">Excluir</a>
-			   	<a href="editar.php?id=' .$row_users['id'] . '" class="btn btn-outline-success">Editar</a>
-		   	 </td>';
-	    
-	    echo '</tr>';  
-	}
-	?>
-	</tbody>
-</table>
-<button type="submit" class="btn btn-outline-primary right"><a style="font-size: 14px; outline-offset: none;" href="formulario.php">NOVO USUÁRIO</a></button>
-</div>
+				}catch(Exception $e)
+				{
+					echo "Não foi possível listar" .$e->getMessage();
+				}
+				while ($resultado = $listar->fetch(PDO::FETCH_OBJ)) {
+
+				?>
+
+				<tbody>
+					<tr>
+						<td><?php echo $resultado->id; ?></td>
+						<td><?php echo $resultado->nome_completo; ?></td>
+						<td><?php echo $resultado->email; ?></td>
+						<td><?php echo $resultado->numero; ?></td>
+						<td><?php echo $resultado->sigla; ?></td>
+						<td><?php echo $resultado->nome_estado; ?></td>
+						<td>
+							<form method="POST" action="excluir.php" name="excluir">
+								<input type="hidden" name="id" value="<?php echo $resultado->id; ?>" EXCLUIR />
+								<input type="submit" value="excluir" name="">
+							</form>&nbsp;
+							<form method="POST" action="editar.php" name="editar">
+								<input type="hidden" name="id" value="<?php echo $resultado->id; ?>" EDITAR />
+								<input type="submit" value="editar" name="">
+							<form>
+						</td>
+
+					</tr>
+				</tbody>
+
+				<?php } ?>
+		</table>
+	</div>
 </body>
